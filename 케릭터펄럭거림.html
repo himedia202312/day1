@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let n=0; //1,2,3,4...누적시키기 위함
+
+        function setCount(){
+            n++; //n=n+1
+            console.log("n=", n);
+            
+            if(n>18){
+                n=1;
+            }
+            //문서내의 케릭터의 src를 변경...
+            let pic=document.getElementById("pic");
+            pic.src="../images/hero/image"+n+".png";
+        }
+
+        //사람 대신, setCount() 함수를 일정
+        //시간 간격으로 계속 호출하게 하자 
+        function auto(){
+            // 1000 -- 1초, 100--0.1초
+            //1000분의 1까지 표현 가능..
+            setInterval("setCount()",10);
+        }
+    </script>
+</head>
+<body>
+    아아아아아앙
+    <button onClick="setCount()">수동펄럭임</button>
+    <button onClick="auto()">자동펄럭임</button>
+    <p>
+    <img id="pic" src="../images/hero/image1.png">
+
+</body>
+</html>
